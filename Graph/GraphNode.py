@@ -1,6 +1,7 @@
 
 from graphviz import Digraph
 from typing import Dict, Optional, Set, Tuple
+from dijkstra import dijkstra
 
 GraphA = """
 v1:v2_2_v4_1
@@ -42,4 +43,7 @@ def plotGraph(g: Dict[str, Dict[str, float]], name: str, path: str = None, pathS
 
 
 if __name__ == '__main__':
-    plotGraph(strToGraph(GraphA), 'GraphA', path='v3,v1,v4,v6')
+    # plotGraph(strToGraph(GraphA), 'GraphA', path='v3,v1,v4,v6')
+    result = dijkstra(strToGraph(GraphA), 'v3')
+    print(result)
+
